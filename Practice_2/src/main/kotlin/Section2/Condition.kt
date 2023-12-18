@@ -8,6 +8,13 @@ fun main() {
 
     val x = 11
 //    conditionExample(x)
+
+    val personAge = 14
+    val checkAdult = if (personAge > 19) {
+        true
+    } else {
+        false
+    }
 }
 
 // If else 조건문에 따른 명령문 실행

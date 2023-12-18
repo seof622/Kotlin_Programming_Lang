@@ -18,7 +18,7 @@ constructor
  - Class member나 Constructor에 대해서는 다르게 적용될 수 있음.
  */
 
-open class SmartDevice protected constructor (val name: String, val category: String){
+open class SmartDevice protected constructor(val name: String, val category: String) {
     // class attribute
     var deviceStatus = "online"
         protected set
@@ -101,8 +101,10 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     override fun turnOn() {
         // super 키워드를 사용하여 서브클래스에서 슈퍼클래스 코드 사용, 즉 클래스 외부에서 메서드를 호출
         super.turnOn()
-        println("$name is turned on. Speaker volume is set to $speakerVolume and channel number is " +
-                "set to $channelNumber.")
+        println(
+            "$name is turned on. Speaker volume is set to $speakerVolume and channel number is " +
+                    "set to $channelNumber."
+        )
     }
 
     override fun turnOff() {
@@ -112,7 +114,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 }
 
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
-        SmartDevice(name = deviceName, category = deviceCategory) {
+    SmartDevice(name = deviceName, category = deviceCategory) {
     override val deviceType = "Smart Light"
 
     private val initialBrightnessLevel = if (super.deviceStatus == "online") 2 else 0
@@ -162,7 +164,7 @@ class SmartHome(
 
     fun workSmartTv(task: String) {
         if (smartTvDevice.deviceStatus == "online") {
-            when(task) {
+            when (task) {
                 "increaseVolume" -> smartTvDevice.increaseSpeakerVolume()
                 "decreaseVolume" -> smartTvDevice.decreaseSpeakerVolume()
                 "nextChannel" -> smartTvDevice.nextChannel()
@@ -174,7 +176,7 @@ class SmartHome(
 
     fun workSmartLight(task: String) {
         if (smartLightDevice.deviceStatus == "online") {
-            when(task) {
+            when (task) {
                 "increaseBrightness" -> smartLightDevice.increaseBrightness()
                 "decreaseBrightness" -> smartLightDevice.decreaseBrightness()
                 else -> println("There are not exist such task")
@@ -219,7 +221,9 @@ class RangeRegulator(
     }
 }
 
+
 fun main() {
+
     var smartDevice: SmartDevice = SmartTvDevice("Android TV", "Entertainment")
     // val 키워드로 변수를 선언하면, smartTvDevice를 다른 객체로 재할당은 불가능하나 객체의 속성 값을 업데이트 하는 것은 가능
     // smartTvDevice = SmartDevice() -> 에러 발생

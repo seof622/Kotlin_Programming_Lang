@@ -44,12 +44,10 @@ fun main() {
     val lengthOfName = favoriteActor?.length ?: 0
     println("result of elvis operator : $lengthOfName")
 
-
     var number: Int? = 10
     println("nullable Int is $number")
 
     number = null
     println("nullable Int is $number")
-
 
 }
