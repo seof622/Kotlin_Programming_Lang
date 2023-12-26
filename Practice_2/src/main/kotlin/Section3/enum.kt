@@ -16,3 +16,5 @@ fun main() {
     val question2 = EnumQuestion<Boolean>("The sky is green. True or False", false, Difficulty.EASY)
     val question3 = EnumQuestion<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
 }
+
+
