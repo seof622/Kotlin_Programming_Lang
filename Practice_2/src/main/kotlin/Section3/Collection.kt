@@ -2,6 +2,9 @@ package Section3
 
 fun main() {
     /*
+    **********************************************
+    컬렉션에서 val과 var은 모두 요소는 바꿀 수 있지만 컬렉션 객체 자체를 재할당 할 수 있느냐 없느냐 여부에 따라 달라진다.
+    **********************************************
      arrayOf
      val rockPlanets = arrayOf<String>("Mercury", "Venus", "Earth", "Mars")
      val gasPlanets = arrayOf("Jupiter", "Saturn", "Uranus", "Neptune")
